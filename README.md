@@ -1,4 +1,5 @@
 # adpc-compatibility-mode
+ATTENTION: This is not official and not linked to the creators of ADPC.
 ## Scope of this module
 The Scope of this module is, to provide a fallback for the usage of [ADPC](https://www.dataprotectioncontrol.org). Just import this module to your code and make a request, the rest is handled by this module.
 ## How-to
