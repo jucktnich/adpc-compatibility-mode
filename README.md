@@ -1,0 +1,1 @@
+# adpc-compatibility-mode
