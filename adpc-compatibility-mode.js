@@ -146,7 +146,9 @@ const style =
   const permissionListHTML = [
     "<div style='display: flex; justify-content: space-between;'><div style='display: flex; min-height: calc(1.5em + 8px); align-items: center;'><label style='max-width: calc(100vw - 8em - 15px);'>",
     "permission.text",
-    "</label></div><label style='margin-left: 1em; position: relative; display: inline-block; width: calc(3em + 8px); height: calc(1.5em + 8px);'><input style='opacity: 0; width: 0; height: 0;' type='checkbox' id='ADPC-Compatibility-Banner_slider_",
+    "</label></div><label style='margin-left: 1em; position: relative; display: inline-block; width: calc(3em + 8px); height: calc(1.5em + 8px);'><input style='opacity: 0; width: 0; height: 0;' type='checkbox' ",
+    "permission.decision",
+    " id='ADPC-Compatibility-Banner_slider_",
     "permission.id",
     "'><span class='ADPC-Compatibility-Banner_slider'></span></label></div>"
   ]
@@ -194,7 +196,23 @@ function JSONToHTML(JSON, dueToError, enviroment) {
                     resultingHTML += ressource[instruction[1]]
                     break;
                 case "permission":
-                    resultingHTML += enviroment[instruction[1]]
+                    if (instruction[1] == "decision") {
+                      try {
+                        let checked = false;
+                        for (let j = 0; j < currentUserDecisions.consent.length; j++) {
+                          if (currentUserDecisions.consent[j] == enviroment.id) {
+                            checked = true;
+                          }
+                        }
+                        if (checked) {
+                          resultingHTML += "checked"
+                        }
+                      } catch (err) {
+
+                      }
+                    } else {
+                      resultingHTML += enviroment[instruction[1]]
+                    }
                     break;
             }
         }
