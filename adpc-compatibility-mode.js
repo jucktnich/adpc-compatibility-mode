@@ -75,7 +75,7 @@ const style =
     -webkit-transition: .2s;
     transition: .2s;
   }`
-  const supportedLanguages = ["en"];
+  const supportedLanguages = ["en", "de"];
   const localization_en = {
     "cookieBannerTitle": "This website is asking permission to set cookies",
     "ADPCTimeout_1": "There was a problem requesting you're cookie consent via ADPC, so you need to fill out this form. Click ",
@@ -89,6 +89,20 @@ const style =
     "rejectAllButton": "Reject All",
     "saveButton": "Save",
     "acceptAllButton": "Accept All"
+  }
+  const localization_de = {
+    "cookieBannerTitle": "Diese Website möchte Cookies setzen",
+    "ADPCTimeout_1": "Während der Anfrage über ADPC ist ein Fehler aufgetreten, deshalb muss die Anfrage hier beantwortet werden. Klicke ",
+    "ADPCTimeoutLink": "https://www.dataprotectioncontrol.org/",
+    "ADPCTimeoutLinkTitle": "hier",
+    "ADPCTimeout_2": " für mehr Informationen.",
+    "nativeADPC_1": "Dieser Cookie-Banner wird mit ADPC betrieben. Klicke ",
+    "nativeADPCLink": "https://www.dataprotectioncontrol.org/",
+    "nativeADPCLinkTitle": "hier",
+    "nativeADPC_2": " um mehr zu erfahren und alle Vorteile zu genießen.",
+    "rejectAllButton": "Alle ablehnen",
+    "saveButton": "Speichern",
+    "acceptAllButton": "Alle akzeptieren"
   }
   const bannerHTMLStructur = [
     "<div id='ADPC-Compatibility-Banner' class='ADPC-Compatibility-Banner' style='position: absolute; top: 0; left: 0; background: rgba(0, 0, 0, .8); width: 100vw; height: 100vh;'><div style='z-index: 999; position: absolute; top: 50%; left: 50%; margin-right: -50%; transform: translate(-50%, -50%); background-color: white; border-radius: 1.5em; padding: 1em;'><div style='display: flex; justify-content: center;'><h2>",
